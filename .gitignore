@@ -16,6 +16,8 @@
 *.launch
 .settings/
 *.sublime-workspace
+*.iml
+
 
 # IDE - VSCode
 .vscode/*
@@ -33,7 +35,8 @@ npm-debug.log
 yarn-error.log
 testem.log
 /typings
-/src/environments
+/**/environments
+
 
 # System Files
 .DS_Store
