@@ -8,5 +8,11 @@ export const environment ={
     projectId: "csc-453-web-applications",
     storageBucket: "csc-453-web-applications.appspot.com",
     messagingSenderId: "1084730653876"
+  },
+
+  giphyConfig : {
+    apiKey: "jdozUDLmhHErdgCq5vWPmxQWmlxl9Kc0",
+    baseUrl: "https://api.giphy.com/v1/gifs/search"
   }
+
 };
