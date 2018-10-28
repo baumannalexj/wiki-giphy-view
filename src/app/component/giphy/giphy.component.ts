@@ -7,28 +7,31 @@ import {GiphyService} from '../../service/giphy.service';
   styleUrls: ['./giphy.component.css']
 })
 export class GiphyComponent implements OnInit {
-  giphyResultTest: any;
+  gifSourceUrl: any = "";
 
   constructor(private giphyService: GiphyService) {
   }
 
   ngOnInit() {
-    this.getGiphyFromSearch("dog");
   }
 
   getGiphyFromSearch(queryText: string) {
 
+    console.log(`searching for ${queryText}`);
     this.giphyService
       .searchGiphy(queryText)
       .subscribe((response: any) => {
 
-        var firstDownsizedResult =
-          response.data[0].images.downsized;
-
-
-        debugger;
           console.log(response);
-          this.giphyResultTest = firstDownsizedResult.url;
+          var data = response.data;
+
+          var firstDownsizedResult;
+          if (data.length >0 ) {
+            firstDownsizedResult = data[0].images.downsized;
+            this.gifSourceUrl = firstDownsizedResult.url;
+          } else {
+            alert("No gif found. Please try another search.");
+          }
         }
       )
     ;

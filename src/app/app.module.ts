@@ -9,7 +9,7 @@ import {GiphyComponent} from "./component/giphy/giphy.component";
 import { HomeComponent } from './component/home/home.component';
 import {FormsModule} from "@angular/forms";
 import {GiphyService} from "./service/giphy.service";
-import {HttpClient, HttpClientModule} from "@angular/common/http";
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [

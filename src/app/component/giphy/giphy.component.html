@@ -1,10 +1,15 @@
-<form class="form-inline my-2 my-lg-0">
-  <input class="form-control mr-sm-2" type="search" placeholder="Search Giphy" aria-label="Search">
-  <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+<form (ngSubmit)="getGiphyFromSearch(queryText.value)" class="form-inline my-2 my-lg-0">
+
+  <input class="form-control mr-sm-2"
+         type="search"
+         #queryText
+         placeholder="Search Giphy" >
+
+  <button class="btn btn-outline-success my-2 my-sm-0"
+          type="submit">Search</button>
 </form>
 
 
 <div>
-  result image
-  <img src="{{giphyResultTest}}"/>
+  <img src="{{gifSourceUrl}}" alt="Search for a gif!"/>
 </div>
