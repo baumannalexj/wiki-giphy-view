@@ -17,7 +17,7 @@ ________________________________________________________________________________
 _______________________________________________________________________________________
 ### PART - 2 ###
 * [] In the app component bind an input element to capture the users search text
-* []Create a service that searches wikipedia for the user search text and returns a promise
+* []Create a service that searches wikipedia for the user search text and returns an observable
        that displays the results in the app component view. For example, a wiki search of 
       "dog" returns the text "Dog Dog meat Dogs in warfare Dog behavior …"
 * []the search history component should display the users search history and a timestamp
