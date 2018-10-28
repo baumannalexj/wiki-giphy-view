@@ -7,6 +7,9 @@ import { RoutingModule} from "./module/routing/routing.module";
 import {WikipediaComponent} from "./component/wikipedia/wikipedia.component";
 import {GiphyComponent} from "./component/giphy/giphy.component";
 import { HomeComponent } from './component/home/home.component';
+import {FormsModule} from "@angular/forms";
+import {GiphyService} from "./service/giphy.service";
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -18,9 +21,11 @@ import { HomeComponent } from './component/home/home.component';
   ],
   imports: [
     BrowserModule,
-    RoutingModule
+    RoutingModule,
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [GiphyService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
