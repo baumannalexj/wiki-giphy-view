@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {GiphyService} from '../../service/giphy.service';
 
 @Component({
   selector: 'app-giphy',
@@ -6,10 +7,30 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./giphy.component.css']
 })
 export class GiphyComponent implements OnInit {
+  giphyResultTest: any;
 
-  constructor() { }
-
-  ngOnInit() {
+  constructor(private giphyService: GiphyService) {
   }
 
+  ngOnInit() {
+    this.getGiphyFromSearch("dog");
+  }
+
+  getGiphyFromSearch(queryText: string) {
+
+    this.giphyService
+      .searchGiphy(queryText)
+      .subscribe((response: any) => {
+
+        var firstDownsizedResult =
+          response.data[0].images.downsized;
+
+
+        debugger;
+          console.log(response);
+          this.giphyResultTest = firstDownsizedResult.url;
+        }
+      )
+    ;
+  }
 }
