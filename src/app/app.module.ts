@@ -2,7 +2,6 @@ import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 
 import {AppComponent} from './app.component';
-import {HistoryComponent} from './component/history/history.component';
 import {RoutingModule} from "./module/routing/routing.module";
 import {WikipediaComponent} from "./component/wikipedia/wikipedia.component";
 import {GiphyComponent} from "./component/giphy/giphy.component";
@@ -16,7 +15,8 @@ import {AngularFireDatabaseModule} from '@angular/fire/database';
 import {AngularFireAuthModule} from '@angular/fire/auth';
 import {LoginComponent} from "./login/login.component";
 import {environment} from '../environments/environment';
-import {LoginService} from "./login/login.service";
+import {AuthService} from "./login/auth.service";
+import {HistoryComponent} from "./history/history.component";
 
 @NgModule({
   declarations: [
@@ -40,7 +40,7 @@ import {LoginService} from "./login/login.service";
   providers: [
     GiphyService,
     AuthGuard,
-    LoginService
+    AuthService
   ],
   bootstrap: [AppComponent]
 })

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {LoginService} from "./login/login.service";
+import {AuthService} from "./login/auth.service";
 
 @Component({
   selector: 'app-root',
@@ -9,9 +9,9 @@ import {LoginService} from "./login/login.service";
 export class AppComponent {
   title = 'wiki-giphy-views';
 
-  constructor(private loginService : LoginService){}
+  constructor(private authService : AuthService){}
 
   logout() {
-    this.loginService.signOut();
+    this.authService.signOut();
   }
 }

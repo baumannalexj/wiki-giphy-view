@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
-import {HistoryComponent} from "../../component/history/history.component";
 import {WikipediaComponent} from "../../component/wikipedia/wikipedia.component";
 import {GiphyComponent} from "../../component/giphy/giphy.component";
 import {HomeComponent} from "../../component/home/home.component";
 import {LoginComponent} from '../../login/login.component';
+import {HistoryComponent} from "../../history/history.component";
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
