@@ -22,20 +22,17 @@ export class HistoryService {
   }
 
   getSearchHistory() {
-    debugger;
     return this.searchHistoryRef.valueChanges();
   }
 
   addSearchHistory(searchTerm) {
 
-    debugger;
-
-
     this.db
       .object(this.CURRENT_SESSION_HISTORY_PATH)
       .update({
         [Date.now()]: {
-          [Date.now()]: searchTerm
+          timestamp: Date.now(),
+          searchTerm: searchTerm
         }
       });
   }

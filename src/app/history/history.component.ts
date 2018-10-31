@@ -16,17 +16,17 @@ export class HistoryComponent implements OnInit {
     historyService
       .getSearchHistory()
       .subscribe(history => {
-        debugger;
         console.log(history);
 
         let historyAsArray = [];
 
-        history.forEach((timestampAsKey) => {
+        history.forEach((item) => {
 
-          let epochTimeMillis = Object.keys(timestampAsKey);
-          let dateTime = new Date(epochTimeMillis*1000);
-          const searchText = Object.values(timestampAsKey);
-          historyAsArray.push(dateTime + ": " + searchText);
+          // let epochTimeMillis = Object.keys(timestampAsKey);
+          let dateTime = new Date(item.timestamp*1000);
+          // const searchText = Object.values(timestampAsKey);
+          let searchTerm = item.searchTerm;
+          historyAsArray.push(dateTime + ": " + searchTerm);
         });
 
         this.searchHistory = historyAsArray;
