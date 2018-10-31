@@ -5,9 +5,12 @@ import {HistoryComponent} from "../../component/history/history.component";
 import {WikipediaComponent} from "../../component/wikipedia/wikipedia.component";
 import {GiphyComponent} from "../../component/giphy/giphy.component";
 import {HomeComponent} from "../../component/home/home.component";
+import {LoginComponent} from '../../login/login.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent},
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
+  { path: 'login', component: LoginComponent },
+  { path: 'home', component: HomeComponent },
   { path: 'history', component: HistoryComponent},
   { path: 'wikipedia', component: WikipediaComponent},
   { path: 'giphy', component: GiphyComponent}
